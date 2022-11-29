@@ -12,9 +12,9 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker build --build-arg file_path="./service1/index.html" -t service1 .
+      - docker build --build-arg file_path=./service1/index.html -t service1 .
       - docker tag service1:latest 875525659788.dkr.ecr.us-east-1.amazonaws.com/service1:latest
-      - docker build --build-arg file_path="./service2/index.html" -t service2 .
+      - docker build --build-arg file_path=./service2/index.html -t service2 .
       - docker tag service2:latest 875525659788.dkr.ecr.us-east-1.amazonaws.com/service2:latest
   post_build:
     commands:
